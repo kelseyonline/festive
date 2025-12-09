@@ -1,5 +1,20 @@
 from colorama import Fore, Style, Back
 
+from random import randint
+
+fortunes = (
+    "Congrats! You will not be getting socks this year",
+    "You'll be getting a white Christmas this year",
+    "You're going to get the best white elephant gift at the party",
+    "New Year's will be more exciting than the holidays this year",
+    "Someone is going to be elated with the gift you give them this year",
+    "The holidays this year will be one of the most memorable of all time",
+    "You won't need to drive to see family this year",
+    "Your tree will be the envy of all of your friends and family",
+    "You're going to be overbooked with holiday parties, with how popular you are",
+    "You're going to see Santa, for real. Yes, he's been real this whole time!",
+)
+
 
 def get_size():
     size = int(input("How big do you want your tree? (in feet) "))
@@ -7,16 +22,16 @@ def get_size():
     return size
 
 
-def get_theme():
-    color = input("What's your color scheme? (classy, retro, or funky? ")
+def get_fortune(fortunes):
+    i = randint(0, len(fortunes))
 
-    return color
-
-
-def get_fortune(): ...
+    return fortunes[i]
 
 
-def print_tree(size, color):
+def print_tree(size):
+    # Star
+    print((" " * (size - 2)) + (f"{Fore.YELLOW} * "), end="")
+
     # Leaves
     for i in range(size):
         print(
@@ -37,9 +52,11 @@ def print_tree(size, color):
 def main():
     size = get_size()
 
-    color = get_theme()
+    print_tree(size)
 
-    print_tree(size, color)
+    fortune = get_fortune(fortunes)
+
+    print(fortune)
 
 
 main()
