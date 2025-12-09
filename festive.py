@@ -30,17 +30,17 @@ def get_fortune(fortunes):
 
 def print_tree(size):
     # Star
-    print((" " * (size - 2)) + (f"{Fore.YELLOW} * "), end="")
+    print((" " * 45) + (" " * (size - 2)) + (f"{Fore.YELLOW} * "), end="")
 
     # Leaves
     for i in range(size):
         print(
-            (" " * (size - i)) + (f"{Fore.GREEN}#{Style.RESET_ALL}" * (i + i - 1)),
+            (" " * 45) + (" " * (size - i)) + (f"{Fore.GREEN}#{Style.RESET_ALL}" * (i + i - 1)),
             end="\n",
         )
 
     # Trunk
-    print(" " * (size - 3) + (f"{Back.RED}     {Style.RESET_ALL}"))
+    print((" " * 45) + (" " * (size - 3)) + (f"{Back.RED}     {Style.RESET_ALL}"))
 
 
 # Main function
@@ -67,8 +67,7 @@ def main():
 
     fortune = get_fortune(fortunes)
 
-    print(f"{Fore.GREEN}{fortune}")
-
+    print((" " * 20) + f"{Fore.GREEN}{fortune}")
 
     print("\n")
 
