@@ -1,38 +1,45 @@
+from colorama import Fore, Style, Back
+
+
 def get_size():
-    ...
+    size = int(input("How big do you want your tree? (in feet) "))
 
-def get_style():
-    ...
+    return size
 
-def get_theme(): 
-    ...
 
-def get_color(): 
-    ...
+def get_theme():
+    color = input("What's your color scheme? (classy, retro, or funky? ")
 
-def get_fortune(): 
-    ...
+    return color
 
-def print_tree(size): 
+
+def get_fortune(): ...
+
+
+def print_tree(size, color):
     # Leaves
     for i in range(size):
-        print((" " * (size-i)) + ("#" * (i + i-1)), end="\n")
+        print(
+            (" " * (size - i)) + (f"{Fore.GREEN}#{Style.RESET_ALL}" * (i + i - 1)),
+            end="\n",
+        )
 
-    # Trunk 
-    # Workshop this to get this centered 
-    print((" " * (size//2 + 2)) + ("|   |"))
+    # Trunk
+    print(" " * (size - 3) + (f"{Back.RED}     {Style.RESET_ALL}"))
 
 
 # Main function
-    # How many feet tall do you want the tree? (Pick a number betweeen 5 and 10 feet)
+# How many feet tall do you want the tree? (Pick a number betweeen 5 and 10 feet)
 
-    # Minimalist or maximalist?
+# Include a holiday fortune? OR Write custom message?
 
-    # What's your color scheme? (classy, retro, funky)
-
-    # Include a holiday fortune? OR Write custom message?
 
 def main():
-    print_tree(10)
+    size = get_size()
+
+    color = get_theme()
+
+    print_tree(size, color)
+
 
 main()
