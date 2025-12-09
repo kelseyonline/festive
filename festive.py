@@ -23,7 +23,7 @@ def get_size():
 
 
 def get_fortune(fortunes):
-    i = randint(0, len(fortunes))
+    i = randint(0, len(fortunes) - 1)
 
     return fortunes[i]
 
@@ -50,13 +50,31 @@ def print_tree(size):
 
 
 def main():
+    print("\n")
+
     size = get_size()
+
+    print("\n")
+
+    print(f"{Back.RED}{Fore.WHITE}*{Style.RESET_ALL}" * 100)
+
+    print("\n", end="")
+
 
     print_tree(size)
 
+    print("\n")
+
     fortune = get_fortune(fortunes)
 
-    print(fortune)
+    print(f"{Fore.GREEN}{fortune}")
+
+
+    print("\n")
+
+    print(f"{Back.RED}{Fore.WHITE}*{Style.RESET_ALL}" * 100)
+
+    print("\n", end="")
 
 
 main()
